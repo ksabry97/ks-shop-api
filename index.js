@@ -15,6 +15,7 @@ const usersRouter = require('./routers/users');
 const cateogriesRouter = require('./routers/cateogries');
 // cors:
 app.use(cors(corsOptions));
+
 // connection to dataBase:
 mongoose
    .connect(

@@ -49,7 +49,7 @@ router.post(`/`, upload.single('image'), async (req, res) => {
       return res.status(400).send('no image submitted'); // throwing error when no image filed
    }
    const fileName = req.file.filename;
-   const path = `${req.protocol}://${req.get('host')}/public/uploads/`;
+   const path = `${__dirname}/public/uploads/`;
    let product = new Product({
       name: req.body.name,
       description: req.body.description,
@@ -171,7 +171,6 @@ router.get('/', async (req, res) => {
    if (!product) {
       return res.status(400).send('product is not found');
    } else {
-      
       return res.status(200).send(product);
    }
 });
